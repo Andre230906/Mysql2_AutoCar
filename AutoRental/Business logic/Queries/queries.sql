@@ -14,14 +14,6 @@ WHERE tipo_vehiculo = 'tipo_deseado'
            OR (fecha_esperada_llegada >= 'fecha_inicial' AND fecha_esperada_llegada <= 'fecha_final')
     );
 
-INSERT INTO Alquileres (idVehiculo, idCliente, idEmpleado, idSucursal_salida, idSucursal_llegada,
-                        fecha_salida, fecha_llegada, fecha_esperada_llegada, valor_alquiler_semana,
-                        valor_alquiler_dia, porcentaje_descuento, valor_cotizado, valor_pagado)
-VALUES (idVehiculo_deseado, idCliente_deseado, idEmpleado_deseado, idSucursal_salida_deseada,
-        idSucursal_llegada_deseada, 'fecha_salida_deseada', 'fecha_llegada_deseada',
-        'fecha_esperada_llegada_deseada', valor_alquiler_semana_calculado, valor_alquiler_dia_calculado,
-        porcentaje_descuento_aplicado, valor_cotizado, valor_pagado);
-
 SELECT a.idAlquiler, v.tipo_vehiculo, v.placa, c.nombres AS nombre_cliente, e.nombres AS nombre_empleado,
        s_salida.ciudad AS ciudad_salida, s_llegada.ciudad AS ciudad_llegada,
        a.fecha_salida, a.fecha_llegada, a.fecha_esperada_llegada,
